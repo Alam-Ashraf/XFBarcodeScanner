@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XFBarcodeScanning.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:gv="clr-namespace:GoogleVisionBarCodeScanner;assembly=BarcodeScanner.XF">
+
+    <StackLayout>
+        <Frame
+            Padding="24"
+            BackgroundColor="LightPink"
+            CornerRadius="0">
+
+            <Label
+                Margin="0,20,0,0"
+                FontSize="36"
+                HorizontalTextAlignment="Center"
+                Text="Barcode Sample"
+                TextColor="White" />
+
+        </Frame>
+
+
+        <Label
+            x:Name="LblBarcodeValue"
+            Margin="20,10,20,0"
+            FontSize="24"
+            Text="BarcodeType  :"
+            TextColor="Gray" />
+
+
+        <Frame
+            Margin="20,20,20,20"
+            Padding="1"
+            BorderColor="LightPink"
+            CornerRadius="20"
+            IsClippedToBounds="True"
+            VerticalOptions="FillAndExpand">
+
+            <gv:CameraView
+                AutoStartScanning="False"
+                DefaultTorchOn="False"
+                HorizontalOptions="FillAndExpand"
+                OnDetected="CameraView_OnDetected"
+                RequestedFPS="30"
+                VerticalOptions="FillAndExpand"
+                VibrationOnDetected="True" />
+
+        </Frame>
+
+
+        <Grid Margin="20,10,20,20" ColumnDefinitions="*,*">
+
+            <Button
+                x:Name="BtnAuthenticate"
+                Grid.Column="0"
+                BackgroundColor="Gray"
+                Clicked="OnStopScanCode"
+                CornerRadius="28"
+                FontAttributes="Bold"
+                FontSize="15"
+                HorizontalOptions="FillAndExpand"
+                Text="Stop Scan"
+                TextColor="White"
+                TextTransform="None"
+                VerticalOptions="End" />
+
+            <Button
+                Grid.Column="1"
+                BackgroundColor="LightPink"
+                Clicked="OnScanBarCode"
+                CornerRadius="28"
+                FontAttributes="Bold"
+                FontSize="15"
+                HorizontalOptions="FillAndExpand"
+                Text="Scan Barcode"
+                TextColor="White"
+                TextTransform="None"
+                VerticalOptions="End" />
+
+
+        </Grid>
+
+
+
+    </StackLayout>
+
+</ContentPage>
