@@ -6,6 +6,7 @@
     xmlns:gv="clr-namespace:GoogleVisionBarCodeScanner;assembly=BarcodeScanner.XF">
 
     <StackLayout>
+
         <Frame
             Padding="24"
             BackgroundColor="LightPink"
@@ -44,7 +45,7 @@
                 OnDetected="CameraView_OnDetected"
                 RequestedFPS="30"
                 VerticalOptions="FillAndExpand"
-                VibrationOnDetected="True" />
+                VibrationOnDetected="False" />
 
         </Frame>
 
@@ -67,13 +68,29 @@
 
             <Button
                 Grid.Column="1"
-                BackgroundColor="LightPink"
+                BackgroundColor="Silver"
                 Clicked="OnScanBarCode"
                 CornerRadius="28"
                 FontAttributes="Bold"
                 FontSize="15"
                 HorizontalOptions="FillAndExpand"
                 Text="Scan Barcode"
+                TextColor="White"
+                TextTransform="None"
+                VerticalOptions="End" />
+
+
+            <Button
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                BackgroundColor="LightPink"
+                Clicked="OnScanBarcodeFromImage"
+                CornerRadius="28"
+                FontAttributes="Bold"
+                FontSize="15"
+                HorizontalOptions="FillAndExpand"
+                Text="Scan Barcode from Image"
                 TextColor="White"
                 TextTransform="None"
                 VerticalOptions="End" />
