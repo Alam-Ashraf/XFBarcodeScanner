@@ -1,4 +1,4 @@
-#Xamarin forms Barcode Scanner
+Xamarin forms Barcode Scanner
 
 ![Screen_1](https://user-images.githubusercontent.com/48187633/109191495-3d3e9280-77bc-11eb-9f76-47c5c7fd533c.jpeg)
 
