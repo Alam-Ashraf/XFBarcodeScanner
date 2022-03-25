@@ -62,7 +62,7 @@ namespace XFBarcodeScanning
         }
 
 
-        private async void CameraView_OnDetected(object sender, GoogleVisionBarCodeScanner.OnDetectedEventArg e)
+        private void CameraView_OnDetected(object sender, GoogleVisionBarCodeScanner.OnDetectedEventArg e)
         {
             List<GoogleVisionBarCodeScanner.BarcodeResult> obj = e.BarcodeResults;
 
@@ -72,7 +72,7 @@ namespace XFBarcodeScanning
                 result += $"{i + 1}. BarcodeType : {obj[i].BarcodeType}, Barcode : {obj[i].DisplayValue}{Environment.NewLine}";
             }
 
-            Device.BeginInvokeOnMainThread(async () =>
+            Device.BeginInvokeOnMainThread(() =>
             {
                 LblBarcodeValue.Text = result;
 
